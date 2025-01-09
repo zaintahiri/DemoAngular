@@ -1,0 +1,82 @@
+<p>templatework works!</p>
+
+<h3>User Role</h3>
+<div [ngSwitch]="userRole">
+    <p *ngSwitchCase="'Admin'">Welcome Admin</p>
+    <p *ngSwitchCase="'User'">Welcome User</p>
+    <p *ngSwitchCase="'HR'">Welcome HR</p>
+    <p *ngSwitchDefault="'HR'">No user is login, Please Login</p>
+</div>
+
+
+
+<ng-template #add>
+    <input type="text" [(ngModel)]="username" (keyup.enter)="Add()"/>
+    <button (click)="Add()">Save</button>
+    <hr/>
+<!-- New tradition of the for loop in angular -->
+<!-- @for(user of showData; track user){
+    <h3>Welcome,<span style="color:green">{{user}}</span></h3>
+} -->
+
+<!-- <ul>
+    <li *ngFor="let r of showData">
+        {{r.username}}
+        <button (click)="delete(r)">Delete</button>
+    </li>
+</ul> -->
+
+<!-- <ul>
+    <li *ngFor="let r of showData; let i = index">
+       {{i}} - {{r.username}}
+        <button (click)="deleteWithIndex(i)">Delete</button>
+    </li>
+</ul> -->
+
+<div *ngIf="showData.length==0">
+    <p>No data found</p>
+</div>
+
+<ul>
+    @for(user of showData; track user; let i=$index)
+    {
+        <li>
+            {{i}} - {{user.username}}
+             <button (click)="deleteWithIndex(i)">Delete</button>
+         </li>
+
+    }
+    
+</ul>
+
+
+    <!-- <h3 *ngFor="let r of showData">Welcome,<span style="color: green;">{{r}}</span></h3> -->
+    <!-- <div *ngFor="let r of showData">
+        <h3>Welcome,{{r}}</h3>
+    </div> -->
+    <!-- <ul *ngFor="let r of showData">
+        <li><a href="#">{{r}}</a></li>
+    </ul> -->
+    <!-- <table>
+        <tr><td>User Data</td></tr>
+        <tr *ngFor="let r of showData">
+            <td>{{r}}</td>
+        </tr>
+    </table> -->
+</ng-template>
+
+<div [ngTemplateOutlet]="add">
+    <h1>Section One</h1>
+    <hr/>
+    
+</div>
+
+<!-- <div [ngTemplateOutlet]="add">
+    <h1>Section Two</h1>
+    <hr/>
+</div>
+
+<div [ngTemplateOutlet]="add">
+    <h1>Section Three</h1>
+    <hr/>
+</div> -->

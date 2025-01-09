@@ -4,10 +4,11 @@ import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
+import { TemplateworkComponent } from './templatework/templatework.component';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule,CommonModule,AppNavbar,HeaderComponent],
+  imports: [FormsModule,CommonModule,AppNavbar,HeaderComponent,TemplateworkComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -32,4 +33,9 @@ export class AppComponent {
   }
 
   isUserLogin:boolean=false;
+
+  loginCount:number=0;
+  LoginCountAttempt(){
+    this.loginCount++;
+  }
 }
