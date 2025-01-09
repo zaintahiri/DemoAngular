@@ -1,0 +1,14 @@
+.active{
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    border:green solid 1px;
+}
+
+.no-active{
+
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    border: black solid 1px;
+}
