@@ -1,0 +1,21 @@
+<p>post works!</p>
+
+
+<h3>This title is from Parent: <span style="color: green;">{{titlePostApp}}</span> </h3>
+
+<h3>postIsUserLogin  : {{postIsUserLogin}}</h3>
+
+<div *ngIf="postListData.length>0">
+    <h3>List of data received from parent</h3>
+    <ul>
+        <li *ngFor="let name of postListData">
+            {{name}}
+        </li>
+    </ul>
+    
+</div>
+
+<div>
+    <h3>Send data to parent component</h3>
+    <button (click)="sendDataToParent()">Send Data To Server</button>
+</div>

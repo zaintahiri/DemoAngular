@@ -1,5 +1,25 @@
 <h1>Welcome, to my firs Angular App</h1>
-<app-templatework></app-templatework>
+
+<!-- 
+send data to child from parent  using @Input() directive
+[titlePostApp]="appTitle" [postListData]="posts" [postIsUserLogin]="isUserLogin"
+
+ 
+Receive data from child to server using EventEmitter and @Output directive. from child,
+server receives data as below
+(MessageEvent)="receiveDataFromChild($event)"
+-->
+<app-post    [titlePostApp]="appTitle" [postListData]="posts" [postIsUserLogin]="isUserLogin"
+             (MessageEvent)="receiveDataFromChild($event)"></app-post>
+
+<button (click)="sendData()">Send Data</button>
+<hr/>
+<div *ngIf="isChildFullyInitialized">
+  <h3>Child Message is :{{childMessage.childMessage}} and RollNo:{{childMessage.rollNo}}</h3>
+</div>
+
+
+<!-- <app-templatework></app-templatework>
 <app-navbar></app-navbar>
 <app-header></app-header>
 <button disabled="{{isDisabled}}">this is String interpolation</button>
@@ -49,4 +69,4 @@
 <hr/>
 
 <button (click)="LoginCountAttempt()" *ngIf="loginCount<=3">Login</button>
-<h4 *ngIf="loginCount>3" style="color:red">Exceeded login attemp, please try later</h4>
+<h4 *ngIf="loginCount>3" style="color:red">Exceeded login attemp, please try later</h4> -->

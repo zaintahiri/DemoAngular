@@ -1,5 +1,38 @@
 <p>templatework works!</p>
 
+
+
+
+
+<!-- User loggedIn css ngStyle-->
+ <!-- <div>
+    <h1 [ngStyle]="{
+        'color':isUserLoggedIn? 'green' : 'red',
+        'textTransform':isUserLoggedIn? 'uppercase' : 'lowercase',
+    }">NG STYLE DIRECTIVE</h1>
+ </div> -->
+
+<!-- User loggedIn css class binding class.login and class.no-login-->
+ <!-- <div>
+    <h3 [class.login]="isUserLoggedIn" [class.no-login]="!isUserLoggedIn">
+            this text is from (Class Binding)
+    </h3>
+ </div> -->
+
+<!-- Simple way to apply css class on the behalf of variable value -->
+
+<!-- <div>
+    <h3 [ngClass]="{
+                    'login': isUserLoggedIn,
+                    'no-login':!isUserLoggedIn    
+                }" >
+            this text is from (ngClass Binding)
+    </h3>
+ </div>
+
+
+
+
 <h3>User Role</h3>
 <div [ngSwitch]="userRole">
     <p *ngSwitchCase="'Admin'">Welcome Admin</p>
@@ -12,8 +45,8 @@
 
 <ng-template #add>
     <input type="text" [(ngModel)]="username" (keyup.enter)="Add()"/>
-    <button (click)="Add()">Save</button>
-    <hr/>
+    <button (click)="Add()">Save</button> -->
+    <!-- <hr/> -->
 <!-- New tradition of the for loop in angular -->
 <!-- @for(user of showData; track user){
     <h3>Welcome,<span style="color:green">{{user}}</span></h3>
@@ -33,7 +66,7 @@
     </li>
 </ul> -->
 
-<div *ngIf="showData.length==0">
+<!-- <div *ngIf="showData.length==0">
     <p>No data found</p>
 </div>
 
@@ -47,7 +80,7 @@
 
     }
     
-</ul>
+</ul> -->
 
 
     <!-- <h3 *ngFor="let r of showData">Welcome,<span style="color: green;">{{r}}</span></h3> -->
@@ -63,13 +96,13 @@
             <td>{{r}}</td>
         </tr>
     </table> -->
-</ng-template>
+<!-- </ng-template>
 
 <div [ngTemplateOutlet]="add">
     <h1>Section One</h1>
     <hr/>
     
-</div>
+</div> -->
 
 <!-- <div [ngTemplateOutlet]="add">
     <h1>Section Two</h1>

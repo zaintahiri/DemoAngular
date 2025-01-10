@@ -1,0 +1,13 @@
+.login{
+    color:green;
+    text-transform: uppercase;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.no-login{
+    color: red;
+    text-transform: lowercase;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}

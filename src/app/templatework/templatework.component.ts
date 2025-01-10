@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-templatework',
-  imports: [FormsModule,CommonModule,NgTemplateOutlet],
+  // imports: [FormsModule,CommonModule,NgTemplateOutlet],
+  imports: [FormsModule,CommonModule],
   templateUrl: './templatework.component.html',
   styleUrl: './templatework.component.css'
 })
@@ -39,4 +40,5 @@ export class TemplateworkComponent {
 
 
   userRole:string="abc";
+  isUserLoggedIn:boolean=true;
 }
